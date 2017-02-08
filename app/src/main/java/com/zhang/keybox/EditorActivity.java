@@ -84,8 +84,10 @@ public class EditorActivity extends AppCompatActivity {
                     setResult(RESULT_OK,intent2);
                     finish();
                 }
+                break;
             case android.R.id.home:
                 finish();
+                break;
             default:
         }
         return true;
@@ -97,16 +99,20 @@ public class EditorActivity extends AppCompatActivity {
         String secret = editTextSecret.getText().toString();
         String remark = editTextRemark.getText().toString();
 
-        KeyBox keyBox2 = new KeyBox();
+        if(name.length() == 0 || count.length() == 0 || secret.length() == 0){
+            Toast.makeText(EditorActivity.this,"名称，账户和密码不能为空",Toast.LENGTH_SHORT).show();
+        }else {
+            KeyBox keyBox2 = new KeyBox();
 
-        keyBox2.setName(name);
-        keyBox2.setCount(count);
-        keyBox2.setPassword(secret);
-        keyBox2.setRemark(remark);
+            keyBox2.setName(name);
+            keyBox2.setCount(count);
+            keyBox2.setPassword(secret);
+            keyBox2.setRemark(remark);
 
-        mKeyBoxLab.addKeyBox(keyBox2);
+            mKeyBoxLab.addKeyBox(keyBox2);
 
-        finish();
+            finish();
+        }
     }
 
     private KeyBox getupdateKeyBox(KeyBox keyBox1){
