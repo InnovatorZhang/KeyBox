@@ -3,7 +3,7 @@
 # 截图
 ![](screenshot/Screenshot_2017-02-09-17-02-23.png)
 ![](screenshot/Screenshot_2017-02-09-17-02-30.png)
-![](screenshot/Screenshot_2017-02-09-17-06-51.png)
+![](screenshot/Screenshot_2017-02-09-17-52-14.png)
 ![](screenshot/Screenshot_2017-02-09-17-07-08.png)
 # 开源库的使用
 ###cardView
