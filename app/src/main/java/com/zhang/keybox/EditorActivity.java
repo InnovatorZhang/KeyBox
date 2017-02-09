@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -108,8 +109,10 @@ public class EditorActivity extends AppCompatActivity {
             keyBox2.setCount(count);
             keyBox2.setPassword(secret);
             keyBox2.setRemark(remark);
+            keyBox2.setDate(new Date());
 
             mKeyBoxLab.addKeyBox(keyBox2);
+
 
             finish();
         }
@@ -126,6 +129,7 @@ public class EditorActivity extends AppCompatActivity {
         keyBox1.setCount(count);
         keyBox1.setPassword(secret);
         keyBox1.setRemark(remark);
+        keyBox1.setDate(new Date());
         return keyBox1;
     }
 

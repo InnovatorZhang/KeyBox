@@ -1,5 +1,6 @@
 package com.zhang.keybox;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -17,6 +18,8 @@ public class KeyBox {
     private String password;
 
     private String remark;
+
+    private Date date;
 
     public KeyBox(){
         this(UUID.randomUUID());
@@ -61,5 +64,13 @@ public class KeyBox {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

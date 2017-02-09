@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.zhang.keybox.KeyboxDatabase.MyDatabaseHelper;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -78,6 +79,7 @@ public class KeyBoxLab {//创建单例
         String count = cursor.getString(cursor.getColumnIndex("count"));
         String password = cursor.getString(cursor.getColumnIndex("password"));
         String remark = cursor.getString(cursor.getColumnIndex("remark"));
+        long date = cursor.getLong(cursor.getColumnIndex("date"));
 
         KeyBox keyBox = new KeyBox(UUID.fromString(uuidString));
 
@@ -85,6 +87,7 @@ public class KeyBoxLab {//创建单例
         keyBox.setCount(count);
         keyBox.setPassword(password);
         keyBox.setRemark(remark);
+        keyBox.setDate(new Date(date));
 
         return keyBox;
     }
@@ -122,6 +125,7 @@ public class KeyBoxLab {//创建单例
         values.put("count",keyBox.getCount());
         values.put("password",keyBox.getPassword());
         values.put("remark",keyBox.getRemark());
+        values.put("date",keyBox.getDate().getTime());
 
         return values;
     }

@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String CREATE_KEY = "create table Key (" + "id integer primary key autoincrement," + "uuid text," + "name text," + "count text,"
-            + "password text," + "remark text)";
+            + "password text," + "date integer"+ "remark text)";
 
     public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

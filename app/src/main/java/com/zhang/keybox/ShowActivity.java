@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.UUID;
 
 public class ShowActivity extends AppCompatActivity {
@@ -117,9 +118,19 @@ public class ShowActivity extends AppCompatActivity {
 
     private void setText(KeyBox keyBox){
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(keyBox.getDate());
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        String date = year + "年" + month + "月" + day + "日" + hour + "时" + minute +"分";
+
         mCountTextView.setText(keyBox.getCount());
         mPasswordTextView.setText(keyBox.getPassword());
-        mTimeTextView.setText("dwqdqdq");
+        mTimeTextView.setText(date);
         mRemarkTextView.setText(keyBox.getRemark());
         mCollapsingToolbarLayout.setTitle(keyBox.getName());
     }
